@@ -56,10 +56,7 @@ pub struct Encoder<W: Write> {
 }
 
 impl<W: Write> Encoder<W> {
-    pub fn new(w: W, width: u32, height: u32) -> Encoder<W> {
-        let mut info = Info::default();
-        info.width = width;
-        info.height = height;
+    pub fn new(w: W, info: Info) -> Encoder<W> {
         Encoder {
             w: w,
             info: info
